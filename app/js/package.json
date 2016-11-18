@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "mobx-react-devtools": "^4.2.9",
     "react-scripts": "0.7.0"
   },
   "dependencies": {

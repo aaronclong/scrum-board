@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
 import './Panel.css'
 
+const addButton = props => {
+	return (
+			<button className="add" onClick={props} >
+			Add Item
+			</button> 
+		)
+}
+
 const title = props => {
-	return(
+	return (
 			<div className="title">
 				 { props["title"] }
+				 { addButton(props["click"]) }
 			</div>
 		)
 }
@@ -12,7 +21,11 @@ const title = props => {
 export default class Panel extends Component {
 	constructor() {
 		super()
-		this.state = { title: "love"}
+		this.state = { title: "love",
+						click : function() {
+							console.log("Twas clicked");
+						}
+					}
 
 	}
 
