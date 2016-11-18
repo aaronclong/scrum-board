@@ -21,3 +21,21 @@
     float: right;
     margin-left: 5px;
 }
+
+.Agenda {
+	display: inline-block;
+	min-height: 100px;
+	max-width: 85%;
+}
+
+.left {
+	height: 100%;
+	width: 2em;
+	content: "\25C0";
+}
+
+.right {
+	height: 100%;
+	width: 2em;
+	content: "\25B6";
+}

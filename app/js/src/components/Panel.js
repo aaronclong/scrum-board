@@ -4,7 +4,7 @@ import './Panel.css'
 const addButton = props => {
 	return (
 			<button className="add" onClick={props} >
-			Add Item
+				Add Item
 			</button> 
 		)
 }
@@ -19,15 +19,6 @@ const title = props => {
 }
 
 export default class Panel extends Component {
-	constructor() {
-		super()
-		this.state = { title: "love",
-						click : function() {
-							console.log("Twas clicked");
-						}
-					}
-
-	}
 
 	render() {
 		return (
