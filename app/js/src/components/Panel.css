@@ -1,0 +1,16 @@
+.Panel {
+	background-color: rgb(200,155,255);
+	display: inline-block;
+	width: 200px;
+	min-height: 100px;
+	padding: 1em;
+	border-radius: 0.2em;
+	margin: 0em 2em 0em 2em;
+}
+
+.title {
+	color: black;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+}
