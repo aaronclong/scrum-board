@@ -3,16 +3,15 @@ import React, { Component } from 'react'
 import { observer } from 'mobx-react'
 
 @observer
-class Todo extends Component {
+export default class Todo extends Component {
 
 	addAgenda() {
 		console.log("'Twas clicked")
 	}
 
 	render() {
-		return <Panel title={ this.props.store.title } 
-					   click={ this.addAgenda.bind(this) } />
+		return ( <Panel title={ this.props.store.title } 
+					   	click={ this.addAgenda.bind(this) } 
+					   	list={ this. props.store.list } /> )
 	}
 }
-
-export default Todo;

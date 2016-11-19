@@ -1,20 +1,25 @@
 
 const validate = obj => {
-	let checks = ["date", "title"]
+	let checks = ["date", "title", "text"]
 	let bool = true
 	checks.forEach(check => {
-		if(checks[check] === undefined) bool = false
+		if(obj[check] === undefined) bool = false
 	})
+	return bool
 }
 
 export default class Agenda {
 	constructor(obj) {
 		if (validate(obj) === false) throw Error("Details missing for Agenda creation")
-		this.dueDate = obj["date"]
-		this.title = obj["title"]
+
+		this._dueDate = obj["date"]
+		this._title = obj["title"]
+		this._text = obj["text"]
 	}
 
-	get dueDate() { return this.dueDate }
+	date() { return this._dueDate.toDateString() }
 
-	get title() { return this.title }
+	title() { return this._title }
+
+	text() { return this._text }
 }
