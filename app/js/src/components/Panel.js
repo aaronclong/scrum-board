@@ -13,13 +13,13 @@ const initAgenda = props => {
 	console.log(props)
 	return ( 
 			<div className="Agenda" key={props._title} >
-				<span className="lef"></span>
+				<div className="Left"></div>
 				<div className="inner">
 					<span> { props.title() } </span><br/>
 					<span> { props.text() } </span><br/>
 					<span> Expires in: { props.date() }</span>
 				</div>
-				<span className="right"></span>
+				<div className="Right"></div>
 			</div>
 		)
 }

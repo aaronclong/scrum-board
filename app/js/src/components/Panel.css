@@ -23,20 +23,22 @@
 }
 
 .Agenda {
+	margin: auto;
 	background-color: rgb(200,255,255);
 	display: inline-block;
 	border-radius: 0.2em;
 	min-height: 100px;
 	max-width: 85%;
+	text-align: left;
 }
 
-.left {
-	height: 100%;
+.Left {
+	height: 2em;
 	width: 2em;
 	content: "\25C0";
 }
 
-.right {
+.Right {
 	height: 100%;
 	width: 2em;
 	content: "\25B6";
