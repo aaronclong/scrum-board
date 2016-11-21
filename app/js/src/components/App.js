@@ -6,8 +6,8 @@ import './App.css'
 import Agenda from '../store/Agenda'
 
 const todo = new TodoStore()
-let agenda1 = new Agenda({title: "Work", text: "We got work, work, work", date: new Date() })
-todo.store.add(agenda1)
+
+window.store = todo
 
 export default class App extends Component {
   render() {
@@ -22,3 +22,5 @@ export default class App extends Component {
 }
 
 
+let agenda1 = new Agenda({title: "Work", text: "We got work, work, work", date: new Date() })
+todo.store.add(agenda1)

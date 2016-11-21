@@ -1,9 +1,10 @@
-import { observable } from 'mobx'
+import { observable, actions } from 'mobx'
 import Store from './Store'
 
 export default class TodoStore {
-	@observable list 
 
+	@observable list 
+	@observable visible
 	@observable title 
 
 	constructor() {

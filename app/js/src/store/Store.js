@@ -3,6 +3,12 @@ import Agenda from './Agenda'
 export default class Store {
 	constructor(ref) {
 		this.ref= ref
+		if (this.ref.list === undefined) {
+			this.ref["list"] = []
+		}
+		if (this.ref.visible === undefined) {
+			this.ref["visible"] = false
+		}
 	}
 
 	add(agenda) {
@@ -17,5 +23,15 @@ export default class Store {
 				this.ref.list.push(indice)
 			}
 		})
+	}
+
+	visibility() {
+		if (this.ref.visible === true ) {
+			this.ref.visible = false
+			return
+		}
+		//standard case
+		this.ref.visible = true
+
 	}
 }

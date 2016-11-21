@@ -11,7 +11,7 @@ const validate = obj => {
 export default class Agenda {
 	constructor(obj) {
 		if (validate(obj) === false) throw Error("Details missing for Agenda creation")
-
+		this._id = Math.floor(Math.random() * 20)
 		this._dueDate = obj["date"]
 		this._title = obj["title"]
 		this._text = obj["text"]
@@ -19,7 +19,10 @@ export default class Agenda {
 
 	date() { return this._dueDate.toDateString() }
 
-	title() { return this._title }
+	id() { return this._id }
 
 	text() { return this._text }
+
+	title() { return this._title }
+
 }
