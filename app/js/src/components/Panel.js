@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Panel.css'
-import Form from 'Form.js'
+import Form from './Form'
 import Agenda from '../store/Agenda'
 
 

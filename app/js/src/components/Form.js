@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import Calendar from 'react-input-calendar'
+import './Form.css'
 import './Panel.css'
 
-class Form extends Component {
+export default class Form extends Component {
 
 	constructor() {
 		super()
@@ -16,7 +18,6 @@ class Form extends Component {
 	}
 
 	change(e)  {
-		e.preventDefault()
 		let name = e.target.name
 		let theState = Object.assign({}, this.state["form"])
 		theState[name] = e.target.value
@@ -36,7 +37,7 @@ class Form extends Component {
 				<form>
 					<input type="text" defaultValue="Title" onChange={this.change.bind(this)} name="title" />
 					<br/><input type="textarea" defaultValue="Description" onChange={this.change.bind(this)} name="description" />
-					<br/><input type="date" onChange={this.change.bind(this)} name="date" />
+					<br/><Calendar format='DD/MM/YYYY' onChange={this.change.bind(this)} date='4-12-2014'  />
 					<br/><input type="submit" value="Submit" />
 				</form>
 			</div>

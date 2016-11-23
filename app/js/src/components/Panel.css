@@ -43,15 +43,3 @@
 	width: 2em;
 	content: "\25B6";
 }
-
-.Form {
-	margin-top: 1em;
-}
-
-.Form input {
-	border: none;
-    border-bottom: 2px solid rgb(200,200,255);
-    padding: 1em;
-    font-family: "Arial Black";
-    font-size: 9px;
-}
