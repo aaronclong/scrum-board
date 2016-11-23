@@ -1,19 +1,8 @@
 import React, { Component } from 'react'
 import './Panel.css'
+import Form from 'Form.js'
 import Agenda from '../store/Agenda'
 
-// Insert Form
-const form = props => {
-	return (
-			<div className="Form" >
-				<form>
-					<input type="text" value="Title" />
-					<br/><input className="input" type="textarea" value="Description" />
-					<br/><input type="submit" value="Submit" />
-				</form>
-			</div>
-		)
-}
 
 //Add Button
 const button = props => {
@@ -29,13 +18,11 @@ const initAgenda = props => {
 	console.log(props)
 	return ( 
 			<div className="Agenda" key={props.id()} >
-				<div className="Left"></div>
 				<div className="inner">
 					<h4> { props.title() } </h4>
 					<span> { props.text() } </span><br/>
 					<span> Due: { props.date() }</span>
 				</div>
-				<div className="Right"></div>
 			</div>
 		)
 }
@@ -43,7 +30,7 @@ const initAgenda = props => {
 const title = props => {
 
 	const showHideForm = () => {
-		if (props["visible"] === true) return form()
+		if (props["visible"] === true) return <Form />
 		return null
 	}
 
@@ -65,7 +52,7 @@ export default class Panel extends Component {
 	}
 
 	renderAgenda() {
-		return ( this.props.list.map(indice => {
+		return ( this.props.store.list.map(indice => {
 			return initAgenda(indice)
 		})  )
 
@@ -85,7 +72,9 @@ export default class Panel extends Component {
 		})
 	}
 
+	//I should move visiblitity into the form itself proper
 	visible() {
+
 		if (this.state.visible === true ) {
 			this.setState({ visible: false})
 			return
@@ -100,7 +89,9 @@ export default class Panel extends Component {
 		let list = this.renderAgenda()
 		return (
 				<div className="Panel">
-					{ title({ title: this.props.title, visible: this.state.visible, click: this.visible.bind(this) }) }
+					{ title({ title: this.props.store.title, 
+							  visible: this.state.visible, 
+							  click: this.visible.bind(this) }) }
 					{ list }
 				</div>
 			)

@@ -7,7 +7,8 @@ import Agenda from '../store/Agenda'
 
 const todo = new TodoStore()
 
-window.store = todo
+let agenda1 = new Agenda({title: "Work", text: "We got work, work, work", date: new Date() })
+todo.store.add(agenda1)
 
 export default class App extends Component {
   render() {
@@ -20,7 +21,3 @@ export default class App extends Component {
     )
   }
 }
-
-
-let agenda1 = new Agenda({title: "Work", text: "We got work, work, work", date: new Date() })
-todo.store.add(agenda1)

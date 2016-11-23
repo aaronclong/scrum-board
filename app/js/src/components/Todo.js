@@ -6,6 +6,6 @@ import { observer } from 'mobx-react'
 export default class Todo extends Component {
 
 	render() {
-		return ( <Panel { ...this.props.store }  /> )
+		return ( <Panel store={ this.props.store }  /> )
 	}
 }
