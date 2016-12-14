@@ -8,7 +8,7 @@ import Agenda from '../store/Agenda'
 const button = props => {
 	return (
 			<button className="add" onClick={props["click"]} >
-				{props["title"]}
+				{ props["title"] }
 			</button> 
 		)
 }
@@ -30,7 +30,7 @@ const initAgenda = props => {
 const title = props => {
 
 	const showHideForm = () => {
-		if (props["visible"] === true) return <Form />
+		if (props["visible"] === true) return <Form submit={props["submit"]}/>
 		return null
 	}
 
@@ -72,6 +72,9 @@ export default class Panel extends Component {
 		})
 	}
 
+	submit(data) {
+		this.props.store.addTo(data)
+	}
 	//I should move visiblitity into the form itself proper
 	visible() {
 
@@ -84,6 +87,7 @@ export default class Panel extends Component {
 
 	}
 
+
 	render() {
 		console.log(this.props)
 		let list = this.renderAgenda()
@@ -91,7 +95,8 @@ export default class Panel extends Component {
 				<div className="Panel">
 					{ title({ title: this.props.store.title, 
 							  visible: this.state.visible, 
-							  click: this.visible.bind(this) }) }
+							  click: this.visible.bind(this),
+							  submit: this.submit.bind(this)}) }
 					{ list }
 				</div>
 			)

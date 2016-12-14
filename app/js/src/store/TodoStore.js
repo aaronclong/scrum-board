@@ -14,11 +14,10 @@ export default class TodoStore {
 		this.store = new Store(this)
 	}
 
-	addTo(agenda) {
-		if (agenda instanceof Agenda) {
-			this.list.push(agenda)
-		}
-		return false
+	addTo(data) {
+		console.log("Fired")
+		let agenda = new Agenda(data)
+		this.list.push(agenda)
 	}
 
 }

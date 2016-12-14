@@ -11,11 +11,12 @@ export default class Form extends Component {
 		super()
 		this.state = {
 			form : {
-				description: "",
+				text: "",
 				title: "",
 				date: new moment()
 			},
-			visible: false
+			visible: false,
+
 		}
 	}
 
@@ -37,17 +38,22 @@ export default class Form extends Component {
 		e.preventDefault()
 		let { form } = this.state
 		if (form.title !== "" && form.description !== "") {
-			this.props.upstream(form)
+			this.props.submit(form)
+			this.setState({form : {
+									text: "",
+									title: "",
+									date: new moment()
+								} })
 		}
 	}
 
 
 	render() {
 		return (
-			<div className="Form">
+			<div className="Form" >
 				<form action="" onSubmit={this.submit.bind(this)}>
 					<input type="text" defaultValue="Title" onChange={this.change.bind(this)} name="title" />
-					<br/><input type="textarea" defaultValue="Description" onChange={this.change.bind(this)} name="description" />
+					<br/><input type="textarea" defaultValue="Description" onChange={this.change.bind(this)} name="text" />
 					<br/><DatePicker dateFormat='DD/MM/YYYY' 
 									 selected={this.state.form.date}
 									 onChange={this.datePick.bind(this)} 
